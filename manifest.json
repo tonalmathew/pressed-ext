@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Pressed",
+  "version": "1.0.0",
+  "description": "show pressed keys",
+  "author": "tonalmathew",
+  "action": {
+    "default_title": "Click to activate pressed"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "dist/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "icons": {
+    "16": "assets/pressed.png",
+    "32": "assets/pressed.png",
+    "48": "assets/pressed.png",
+    "128": "assets/pressed.png"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
